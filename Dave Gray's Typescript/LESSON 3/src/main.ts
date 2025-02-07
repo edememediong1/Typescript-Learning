@@ -12,7 +12,7 @@ guitars[0] = 1984
 guitars.unshift('Jim')
 
 let test = [] //When you create an empty area, it sets to an any type
-let bands: string[] = []
+let bands: string[] = [] //Annotating an empty list to type string
 bands.push('Van Halen')
 
 /*
@@ -36,4 +36,34 @@ myTuple[1] = 42
 let myObj: object
 myObj = []
 
-console.log(typeof myObj)
+console.log(typeof myObj) //checking the typeof
+
+myObj = bands
+myObj = {}
+
+const exampleObj = {
+    prop1: "Dave",
+    prop2: true
+}
+
+exampleObj.prop2 = false //prop2 will only accept a boolean type because it has been lockedin as boolean type
+
+//ANNOTATING THE TYPE OF A STRING
+
+type Guitarist = {
+    name: string,
+    active: boolean,
+    albums: (string | number)[]
+}
+
+let evh: Guitarist = {
+    name: "Eddie",
+    active: false,
+    albums: [1984,5150,'0U812']
+}
+
+let jp: Guitarist = {
+    name: "Jimmy",
+    active: true,
+    albums: ['I', "II", "IV"]
+}

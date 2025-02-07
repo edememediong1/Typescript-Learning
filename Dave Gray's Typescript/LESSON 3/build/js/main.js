@@ -8,7 +8,7 @@ stringArr.push("hey");
 guitars[0] = 1984;
 guitars.unshift('Jim');
 var test = []; //When you create an empty area, it sets to an any type
-var bands = [];
+var bands = []; //Annotating an empty list to type string
 bands.push('Van Halen');
 /*
 Here, the order of the type or the length of the array does not matter.
@@ -24,4 +24,21 @@ myTuple[1] = 42;
 //OBJECTS
 var myObj;
 myObj = [];
-console.log(typeof myObj);
+console.log(typeof myObj); //checking the typeof
+myObj = bands;
+myObj = {};
+var exampleObj = {
+    prop1: "Dave",
+    prop2: true
+};
+exampleObj.prop2 = false; //prop2 will only accept a boolean type because it has been lockedin as boolean type
+var evh = {
+    name: "Eddie",
+    active: false,
+    albums: [1984, 5150, '0U812']
+};
+var jp = {
+    name: "Jimmy",
+    active: true,
+    albums: ['I', "II", "IV"]
+};
