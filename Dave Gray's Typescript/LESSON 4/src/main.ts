@@ -21,3 +21,12 @@ type artiste = { //Interface can be used when writing methods in a class
 type UserId = stringOrNumber 
 
 // interface PostId = stringOrNumber //interface cannot be used for variable type annotation but rather for objects
+
+
+//LITERAL TYPES
+let myName : "Emediong" // Strictly setting the Name to Emediong
+
+// myName = "David" // will not work because the name has been set to Emediong
+
+let userName: "Dave" | "John" | "Amy" //multiple literal types
+userName = "Amy"
