@@ -8,8 +8,16 @@ interface Guitarist { //Interface can be used when writing methods in a class
 
 //Type Aliases
 
+type stringOrNumber = string | number
+
+type stringOrNumberArray = (string | number)[]
+
 type artiste = { //Interface can be used when writing methods in a class
     name?: string,
     active: boolean,
-    albums: (string | number)[]
+    albums: stringOrNumberArray
 }
+
+type UserId = stringOrNumber 
+
+// interface PostId = stringOrNumber //interface cannot be used for variable type annotation but rather for objects
