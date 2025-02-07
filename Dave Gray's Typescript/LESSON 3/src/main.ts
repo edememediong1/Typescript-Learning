@@ -52,6 +52,14 @@ exampleObj.prop2 = false //prop2 will only accept a boolean type because it has 
 
 type Guitarist = {
     name: string,
+    active?: boolean, //The question mark makes the active property optional (that means it is not strictly boolean or compulsory to be present)
+    albums: (string | number)[]
+}
+
+//OR
+
+interface Drumer { //Interface can be used when writing methods in a class
+    name?: string,
     active: boolean,
     albums: (string | number)[]
 }
@@ -66,4 +74,43 @@ let jp: Guitarist = {
     name: "Jimmy",
     active: true,
     albums: ['I', "II", "IV"]
+}
+
+let u2: Drumer = {
+    name: "Unity",
+    active: false,
+    albums: ["WOWU", "U2"]
+}
+
+//evh = jp
+
+//Example of usecase:
+
+const greetGuitarist = (guitarist: Guitarist) => {
+    return `Hello ${guitarist.name}!`
+}
+
+console.log(greetGuitarist(jp))
+
+const greetDrumer = (drumer: Drumer) => {
+    // Using narrowing
+    if (drumer.name){
+        return `Hello ${drumer.name.toUpperCase()}`
+    }
+    return 'Hello!'
+    //OR
+    // return `Hello ${drumer.name?.toUpperCase()}!` //We need to add ? to the name property or it will not work.
+}
+console.log(greetDrumer(u2))
+
+
+//ENUMS
+// "Unlike most Typescript features, Enums are not a type-level addition to Javascript but something added to the language and runtime"
+
+enum Grade {
+    U = 1, //enum U = 0 defaultly
+    D,
+    C,
+    B,
+    A,
 }

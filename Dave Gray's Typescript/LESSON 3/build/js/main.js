@@ -42,3 +42,34 @@ var jp = {
     active: true,
     albums: ['I', "II", "IV"]
 };
+var u2 = {
+    name: "Unity",
+    active: false,
+    albums: ["WOWU", "U2"]
+};
+//evh = jp
+//Example of usecase:
+var greetGuitarist = function (guitarist) {
+    return "Hello ".concat(guitarist.name, "!");
+};
+console.log(greetGuitarist(jp));
+var greetDrumer = function (drumer) {
+    // Using narrowing
+    if (drumer.name) {
+        return "Hello ".concat(drumer.name.toUpperCase());
+    }
+    return 'Hello!';
+    //OR
+    // return `Hello ${drumer.name?.toUpperCase()}!` //We need to add ? to the name property or it will not work.
+};
+console.log(greetDrumer(u2));
+//ENUMS
+// "Unlike most Typescript features, Enums are not a type-level addition to Javascript but something added to the language and runtime"
+var Grade;
+(function (Grade) {
+    Grade[Grade["U"] = 1] = "U";
+    Grade[Grade["D"] = 2] = "D";
+    Grade[Grade["C"] = 3] = "C";
+    Grade[Grade["B"] = 4] = "B";
+    Grade[Grade["A"] = 5] = "A";
+})(Grade || (Grade = {}));
