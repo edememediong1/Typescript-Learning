@@ -1,8 +1,12 @@
 "use strict";
-var username = "Emediong Bassey";
-console.log(username);
-var a = 12;
-var b = 6;
-var c = 2;
-console.log(a / b);
-console.log(c * b);
+var myName = "Emediong";
+var meaningOfLife;
+var isLoading;
+var album;
+myName = "John";
+meaningOfLife = 42;
+isLoading = true;
+album = 1984;
+var sum = function (a, b) {
+    return a + b;
+};
