@@ -14,3 +14,14 @@ var logMsg = function (message) {
 };
 logMsg("Hello!");
 logMsg(add(2, 3));
+var substract = function (c, d) {
+    return c - d;
+};
+// You can also use the interface like below: But it mainly for classes;
+// interface mathFunction {
+//     (a: number, b:number): number
+// }
+var multiply = function (c, d) {
+    return c * d;
+};
+logMsg(multiply(3, 2));

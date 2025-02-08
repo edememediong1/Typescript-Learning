@@ -43,3 +43,21 @@ const logMsg = (message: any): void => {
 logMsg("Hello!")
 logMsg(add(2, 3))
 
+let substract = function (c: number, d:number):number {
+    return c - d
+}
+
+//USING A TYPE ALIAS TO ANNOTATE THE PARAMETERS OF THE FUNCTION
+type mathFunction = (a: number, b: number) => number
+
+// You can also use the interface like below: But it mainly for classes;
+// interface mathFunction {
+//     (a: number, b:number): number
+// }
+
+
+let multiply: mathFunction = function(c,d) {
+    return c * d
+}
+
+logMsg(multiply(3, 2))
