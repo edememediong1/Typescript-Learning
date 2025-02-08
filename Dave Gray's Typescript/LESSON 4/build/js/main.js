@@ -50,3 +50,23 @@ var total = function (a) {
     return a + nums.reduce(function (prev, curr) { return prev + curr; });
 };
 logMsg(total(1, 2, 3, 4));
+//NEVER TYPE
+var createError = function (errMsg) {
+    throw new Error(errMsg);
+};
+//Also never type will be infered when we have an infinite loop in our code.
+var infinite = function () {
+    var i = 1;
+    while (true) {
+        i++;
+        if (i > 100)
+            break; //A conditional break point will infer it to void
+    }
+};
+var numberOrString = function (value) {
+    if (typeof value === "string")
+        return "string";
+    if (typeof value === "number")
+        return "number";
+    return createError("This should never happen");
+};

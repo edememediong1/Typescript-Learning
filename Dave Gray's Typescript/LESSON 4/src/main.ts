@@ -86,3 +86,26 @@ const total = (a: number, ...nums: number[]): number => {
 }
 
 logMsg(total(1,2,3,4)) 
+
+//NEVER TYPE
+const createError = (errMsg: string) => { //The never type is automatically infered when error is used.
+    throw new Error(errMsg)
+}
+
+//Also never type will be infered when we have an infinite loop in our code.
+
+const infinite = () => {
+    let i: number = 1
+    while (true) {
+        i++ 
+        if (i > 100) break //A conditional break point will infer it to void
+    }
+}
+
+
+const numberOrString = (value: number | string): string => {
+    if (typeof value === "string") return "string"
+    if (typeof value === "number") return "number"
+    return createError("This should never happen")
+
+}
