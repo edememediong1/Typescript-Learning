@@ -25,3 +25,28 @@ var multiply = function (c, d) {
     return c * d;
 };
 logMsg(multiply(3, 2));
+//Optional Parameters
+var addAll = function (a, b, c) {
+    if (typeof c !== 'undefined') {
+        return a + b + c;
+    }
+    return a + b;
+};
+// Default param value
+var sumAll = function (a, b, c) {
+    if (a === void 0) { a = 10; }
+    if (c === void 0) { c = 2; }
+    return a + b + c;
+};
+logMsg(addAll(2, 3, 2));
+logMsg(addAll(2, 3));
+logMsg(sumAll(undefined, 3));
+// REST PARAMETERS
+var total = function (a) {
+    var nums = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        nums[_i - 1] = arguments[_i];
+    }
+    return a + nums.reduce(function (prev, curr) { return prev + curr; });
+};
+logMsg(total(1, 2, 3, 4));
