@@ -63,6 +63,11 @@ var infinite = function () {
             break; //A conditional break point will infer it to void
     }
 };
+//custom type guard
+var isNumber = function (value) {
+    return typeof value === "number" ? true : false;
+};
+// use of the never type
 var numberOrString = function (value) {
     if (typeof value === "string")
         return "string";
