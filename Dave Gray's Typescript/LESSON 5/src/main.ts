@@ -27,3 +27,10 @@ let doubleCast = (10 as unknown) as string
 console.log(typeof doubleCast)
 
 //The DOM
+const img = document.querySelector('img')! //using the non-null assertion
+const myImg = document.getElementById("#img") as HTMLImageElement
+const nextImg = <HTMLImageElement>document.getElementById("#img")
+
+
+img.src
+myImg.src

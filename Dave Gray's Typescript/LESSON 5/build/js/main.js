@@ -19,3 +19,8 @@ var nextVal = addOrConcat(2, 2, "concat");
 var doubleCast = 10;
 console.log(typeof doubleCast);
 //The DOM
+var img = document.querySelector('img'); //using the non-null assertion
+var myImg = document.getElementById("#img");
+var nextImg = document.getElementById("#img");
+img.src;
+myImg.src;
